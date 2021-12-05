@@ -1,0 +1,22 @@
+body {
+    background-color: #222;
+    color: #eee;
+
+    width: 30rem;
+    height: 8rem;
+}
+.piece {
+    width: 4rem;
+    height: 4rem;
+}
+.row {
+    display: flex;
+}
+
+.column {
+    padding: 0.5rem;
+}
+
+.selected {
+    background-color: mediumvioletred;
+}

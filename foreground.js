@@ -1,20 +1,21 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.type === "togglePieceVisibility") {
-        chrome.storage.local.get(request.pieces.map(piece => `${piece['color']}_${piece['piece']}`), data => {
-            for (const [pieceKey, isHidden] of Object.entries(data)) {
-                const selector = `.${pieceKey.replace("_", '.')}`
-                document.querySelectorAll(selector).forEach(el => {
-                    if (isHidden) {
-                        el.style.removeProperty('visibility')
-                    } else {
-                        el.style.visibility = "hidden";
-                    }
-                });
-                const data = {}
-                data[pieceKey] = !isHidden;
-                chrome.storage.local.set(data);
-            }
-        });
+        request.pieces.map(piece => `${piece['color']}_${piece['piece']}`).forEach(pieceKey => {
+            const selector = `.${pieceKey.replace("_", '.')}`
+            document.querySelectorAll(selector).forEach(el => {
+                if (el.style.visibility === 'hidden') {
+                    el.style.removeProperty('visibility')
+                    isHidden = false
+                } else {
+                    el.style.visibility = "hidden";
+                    isHidden = true
+                }
+            });
+            const data = {}
+            data[pieceKey] = isHidden;
+            chrome.storage.local.set(data);
+
+        })
     }
 });
 

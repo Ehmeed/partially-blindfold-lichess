@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Partially Blindfold Lichess",
-  "description": "This extension allows you to hide only some of yours or opponents pieces and play game partially blindfolded.",
+  "description": "This extension allows you to hide only some of yours or opponents pieces and play the game partially blindfolded.",
   "version": "0.0.1",
   "icons": {
     "16": "logo/logo-16.png",
@@ -13,7 +13,6 @@
     "default_popup": "popup/popup.html"
   },
   "permissions": [
-    "tabs",
     "storage"
   ],
   "content_scripts": [

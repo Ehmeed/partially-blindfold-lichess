@@ -4,6 +4,8 @@
 Extension for chromium based browsers that allows you to hide some of yours or opponents
 pieces from the chessboard and play "partially blindfolded".
 
+Available from chrome webstore https://chrome.google.com/webstore/detail/partially-blindfold-liche/aoiefionkjnhljdoolofapmdheialhga
+
 ![Alt Text](demo.gif)
 
 ### Issues
